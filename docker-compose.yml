@@ -15,3 +15,8 @@ services:
       context: imagick/wheezy
     container_name: imagickwheezy
     image: imagickwheezy
+  imagickjessie:
+    build:
+      context: imagick/jessie
+    container_name: imagickjessie
+    image: imagickjessie

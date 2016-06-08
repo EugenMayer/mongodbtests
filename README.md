@@ -6,7 +6,7 @@ Different docker images to reproduce memory leaks or segmentation faults in php 
 All docker images have the debug symbols installed, including valgrind for debugging purposes
 
 ## Testing
-### imagick
+### imagick extension
 Issue: https://github.com/mkoppanen/imagick/issues/156
 ```
 docker-compose up imagickwheezy
@@ -15,7 +15,16 @@ valgrind --leak-check=full /usr/bin/php -S localhost:8085
 CM-c
 ```
 
-### mongo
+same for jessie
+
+```
+docker-compose up imagickjessie
+docker exec -i -t imagickjessie bash
+valgrind --leak-check=full /usr/bin/php -S localhost:8085
+CM-c
+```
+
+### mongodb extension
 Issue: https://github.com/mongodb/mongo-php-driver/issues/209#issuecomment-224675831
 ```
 docker-compose up mongowheezy
