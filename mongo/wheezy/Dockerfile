@@ -14,7 +14,9 @@ RUN apt-get -y install php5
 RUN apt-get -y install libpcre3-dev libcurl4-openssl-dev libcurl4-openssl-dev pkg-config
 RUN apt-get -y install autoconf g++ make php-pear php5-dev php5-dbg valgrind
 # extra packages to imitate problematic stack
-RUN apt-get -y install libsasl2-dev libmemcached-dev
+RUN apt-get -y install libsasl2-dev libmemcached-dev memcached libmemcached10
+# thats the cause of the segfaults!
+RUN apt-get -y install libsasl2-modules-gssapi-mit
 # memcached-dev
 RUN pecl install mongodb && echo "extension=mongodb.so" >> /etc/php5/cli/php.ini
 
