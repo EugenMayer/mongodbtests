@@ -17,7 +17,6 @@ RUN apt-get -y install autoconf g++ make php-pear php5-dev php5-dbg valgrind
 RUN apt-get -y install libsasl2-dev libmemcached-dev memcached libmemcached10
 # thats the cause of the segfaults!
 RUN apt-get -y install libsasl2-modules-gssapi-mit
-# memcached-dev
 RUN pecl install mongodb && echo "extension=mongodb.so" >> /etc/php5/cli/php.ini
 
 CMD [ "bash", "-c", "valgrind --leak-check=full /usr/bin/php -S localhost:8085" ]
