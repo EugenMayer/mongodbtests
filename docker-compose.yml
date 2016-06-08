@@ -1,0 +1,12 @@
+version: '2'
+services: 
+  mongojessie:
+    build:
+      context: jessie
+    container_name: mongojessie
+    image: mongojessie
+  mongowheezy:
+    build:
+      context: wheezy
+    container_name: mongowheezy
+    image: mongowheezy
