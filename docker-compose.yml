@@ -2,11 +2,16 @@ version: '2'
 services: 
   mongojessie:
     build:
-      context: jessie
+      context: mongo/jessie
     container_name: mongojessie
     image: mongojessie
   mongowheezy:
     build:
-      context: wheezy
+      context: mongo/wheezy
     container_name: mongowheezy
     image: mongowheezy
+  imagickwheezy:
+    build:
+      context: imagick/wheezy
+    container_name: imagickwheezy
+    image: imagickwheezy
